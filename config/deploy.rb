@@ -6,7 +6,7 @@ application = 'money'
 set :rvm_type, :user
 set :rails_env, 'production'
 set :rvm_ruby_version, '2.4.0'
-	set :deploy_to, '/home/deployer/apps/money'
+set :deploy_to, '/home/deployer/apps/money'
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 namespace :foreman do
@@ -62,7 +62,6 @@ namespace :deploy do
       execute "mkdir  #{shared_path}/config/sphinx/db/"
       execute "mkdir  #{shared_path}/"
       execute "mkdir  /home/deployer/uploads"
-      execute "mkdir  /home/deployer/shared/"
       execute "mkdir #{shared_path}/system"
       execute "mkdir /home/deployer/log/"
       execute "mkdir /home/deployer/apps/#{application}/run/sockets"
@@ -96,7 +95,7 @@ namespace :deploy do
       execute "ln -s #{shared_path}/Procfile #{release_path}/Procfile"
       execute "ln -s #{shared_path}/sys #{release_path}/public/sys"
       execute "ln -s /home/deployer/uploads #{release_path}/public/uploads"
-      execure "ln -s /home/deployer/apps/#{application}/run #{release_path}/run"
+      execute "ln -s /home/deployer/apps/#{application}/run #{release_path}/run"
       execute "ln -s #{shared_path}/config/sphinx #{release_path}/config/sphinx"
 
     end
