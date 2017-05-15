@@ -65,8 +65,8 @@ namespace :deploy do
       execute "mkdir  /home/deployer/shared/"
       execute "mkdir #{shared_path}/system"
       execute "mkdir /home/deployer/log/"
-      execure "mkdir /home/deployer/run/sockets"
-      execute "mkdir /home/deployer/run/pids"
+      execute "mkdir /home/deployer/apps/#{application}/run/sockets"
+      execute "mkdir /home/deployer/apps/#{application}/run/pids"
 
       upload!('shared/database.yml', "#{shared_path}/config/database.yml")
       upload!('shared/secrets.yml', "#{shared_path}/config/secrets.yml")
