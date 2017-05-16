@@ -60,10 +60,10 @@ namespace :deploy do
       execute "mkdir  #{shared_path}/config/sphinx/"
       execute "mkdir  #{shared_path}/config/sphinx/tmp/"
       execute "mkdir  #{shared_path}/config/sphinx/db/"
-      execute "mkdir  #{shared_path}/"
       execute "mkdir  /home/deployer/uploads"
       execute "mkdir #{shared_path}/system"
       execute "mkdir /home/deployer/log/"
+      execute "mkdir /home/deployer/apps/#{application}/run"
       execute "mkdir /home/deployer/apps/#{application}/run/sockets"
       execute "mkdir /home/deployer/apps/#{application}/run/pids"
 
