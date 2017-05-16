@@ -13,21 +13,21 @@ namespace :foreman do
   desc 'Start server'
   task :start do
     on roles(:all) do
-      sudo "systemctl start #{application}"
+      sudo "systemctl start #{application}.target"
     end
   end
 
   desc 'Stop server'
   task :stop do
     on roles(:all) do
-      sudo "systemctl stop #{application}"
+      sudo "systemctl stop #{application}.target"
     end
   end
 
   desc 'Restart server'
   task :restart do
     on roles(:all) do
-      sudo "systemctl restart #{application}"
+      sudo "systemctl restart #{application}.target"
     end
   end
 
